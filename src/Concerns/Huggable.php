@@ -18,15 +18,15 @@ trait Huggable
 {
     public function hug(HuggableContract $huggable): void
     {
-        if(!$huggable instanceof Model) {
+        if (! $huggable instanceof Model) {
             throw new InvalidArgumentException();
         }
 
-        if(!array_key_exists(Notifiable::class, class_uses_recursive($huggable))) {
+        if (! array_key_exists(Notifiable::class, class_uses_recursive($huggable))) {
             throw new InvalidArgumentException();
         }
 
-        if($this->is($huggable)) {
+        if ($this->is($huggable)) {
             throw new SelfHugException();
         }
 
