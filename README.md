@@ -1,1 +1,1 @@
-# laravel-hug
+# 🤗 Laravel Hug
